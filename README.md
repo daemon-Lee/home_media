@@ -9,3 +9,8 @@ sudo apt install npm
 " Then init new project "
 npm init -y
 ```
+
+Globally Installing TypeScript for install on your computer
+```bash
+sudo npm install -g typescript
+```
