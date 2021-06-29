@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/daemon-Lee/learn_Typescript#readme",
   "devDependencies": {
-    "demon": "^1.4.4"
+    "demon": "^1.4.4",
+    "nodemon": "^2.0.7"
   }
 }
