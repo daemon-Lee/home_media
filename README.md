@@ -34,3 +34,8 @@ npm i --save-dev nodemon
 ' run watch'
 npm run watch
 ```
+
+To init Typescipt project, typing
+```bash
+npx tsc --init
+```
