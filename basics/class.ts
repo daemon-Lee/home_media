@@ -12,7 +12,7 @@ export class Employee {
     }
 
     print() {
-        return 'name:' + this.name
+        return `name: ${this.name}` 
     }
 }
 
