@@ -20,3 +20,9 @@ addDefault(19,29)
 
 const minus = (a: number, b: number): number => a-b
 console.log(minus(29,19))
+
+// FUNCTION SIGNATURE
+
+// let greet1: Function
+let greet1: (a: string, b: number) => void
+greet = (name: string, greeting: string) => console.log('${name}')
