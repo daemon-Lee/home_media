@@ -4,7 +4,9 @@
   "description": "Simple project for learning Typescript",
   "main": "index.js",
   "scripts": {
-    "watch": "nodemon index.js",
+    "build-ts": "tsc",
+    "watch-ts": "tsc -w",
+    "start" : "tsc && node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,5 +23,11 @@
   "devDependencies": {
     "demon": "^1.4.4",
     "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "pug": "^3.0.2"
   }
 }
