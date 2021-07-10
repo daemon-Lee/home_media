@@ -3,6 +3,9 @@ import compression from "compression";
 import "dotenv/config";
 import path from "path";
 
+// Controllers (routers handle)
+import * as home from "./controllers/home"
+
 // Create Express sever
 const app = express();
 
@@ -19,7 +22,8 @@ app.use(
 );
 
 // Primary app router.
-app.get('/', (req,res) => {
+app.get('/', home.index)
+app.get('/sample', (req,res) => {
     res.send("Here is home.")
 })
 
