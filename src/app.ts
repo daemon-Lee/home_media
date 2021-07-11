@@ -5,6 +5,7 @@ import path from "path";
 
 // Controllers (routers handle)
 import * as home from "./controllers/home"
+import * as media from "./controllers/media"
 
 // Create Express sever
 const app = express();
@@ -23,6 +24,7 @@ app.use(
 
 // Primary app router.
 app.get('/', home.index)
+app.get('/media', media.index)
 app.get('/sample', (req,res) => {
     res.send("Here is home.")
 })
