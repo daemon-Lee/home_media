@@ -2,6 +2,7 @@ import express, { response } from "express";
 import compression from "compression";
 import "dotenv/config";
 import path from "path";
+import serveIndex from "serve-index";
 
 // Controllers (routers handle)
 import * as home from "./controllers/home"
@@ -13,6 +14,8 @@ const app = express();
 // Express configuration
 app.set("port", process.env.PORT || 3000);
 app.use(compression());
+
+// Use middleware to serve static files
 app.set("views", path.join(__dirname, "../views"));
 app.set("view engine", "pug");
 app.use(
@@ -25,6 +28,10 @@ app.use(
 app.use(
     '/medias',
     express.static(path.join(__dirname,"../media"))
+);
+app.use(
+    '/medias',
+    serveIndex(path.join(__dirname,"../media"))
 )
 
 // Primary app router.
