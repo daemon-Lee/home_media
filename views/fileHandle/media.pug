@@ -2,3 +2,11 @@ extends ../layout
 
 block content
     h1 this is media
+    .row
+        .col-sm-4
+            p.text-primary Small
+            p= img_path
+        .col-sm-8 
+            p.text-warning Lagre
+
+    img(src=img_path, alt=img_name, style='width:400px; height:400px;')

@@ -16,11 +16,16 @@ app.use(compression());
 app.set("views", path.join(__dirname, "../views"));
 app.set("view engine", "pug");
 app.use(
+    '/static',
     express.static(
         path.join(__dirname, "../src/static"),
         {maxAge: 31557600001}
     )
 );
+app.use(
+    '/medias',
+    express.static(path.join(__dirname,"../media"))
+)
 
 // Primary app router.
 app.get('/', home.index)
