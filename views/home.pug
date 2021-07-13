@@ -1,5 +1,24 @@
 extends layout
 
+block style
+    style.
+        .center-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+        }
+        body{
+            background-image: url('static/images/cover.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+     
+
 block content
-    h1 Say hello
-    h2 hahaha
+    main.center-box.text-center.text-light
+        h1 Hanoi
+        h4.lead The wind rises,
+        h4.lead We must try to live

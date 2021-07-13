@@ -3,17 +3,17 @@ header
     .container
       a.navbar-brand(href='/')
         i.fa.fa-cube
-        | Project name
+        | Gallary
       button.navbar-toggler(type='button', data-toggle='collapse', data-target='.navbar-collapse')
         span.navbar-toggler-icon
 
       .collapse.navbar-collapse
         .dropdown-divider
         ul.nav.navbar-nav.mr-auto
-          li.nav-item(class=(title === 'Home') ? 'active' : undefined)
-            a.nav-link(href='/') Home
           li.nav-item(class=(title === 'Media') ? 'active' : undefined)
-            a.nav-link(href='/media') Media
+            a.nav-link(href='/') Media
+          li.nav-item(class=(title === 'Medias') ? 'active' : undefined)
+            a.nav-link(href='/medias') Medias
         ul.nav.navbar-nav
           if !user
             li.nav-item(class=(title === 'Login') ? 'active' : undefined)

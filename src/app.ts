@@ -27,11 +27,11 @@ app.use(
 );
 app.use(
     '/medias',
-    express.static(path.join(__dirname,"../media"))
+    express.static(path.join(__dirname, process.env.MEDIA_PATH || "../media"))
 );
 app.use(
     '/medias',
-    serveIndex(path.join(__dirname,"../media"))
+    serveIndex(path.join(__dirname, process.env.MEDIA_PATH || "../media"))
 )
 
 // Primary app router.
