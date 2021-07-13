@@ -3,7 +3,7 @@ header
     .container
       a.navbar-brand(href='/')
         i.fa.fa-cube
-        | Gallary
+        | Home
       button.navbar-toggler(type='button', data-toggle='collapse', data-target='.navbar-collapse')
         span.navbar-toggler-icon
 
@@ -14,6 +14,8 @@ header
             a.nav-link(href='/') Media
           li.nav-item(class=(title === 'Medias') ? 'active' : undefined)
             a.nav-link(href='/medias') Medias
+          li.nav-item(class=(title === 'Gallery') ? 'active' : undefined)
+            a.nav-link(href='/Gallery') Gallery
         ul.nav.navbar-nav
           if !user
             li.nav-item(class=(title === 'Login') ? 'active' : undefined)

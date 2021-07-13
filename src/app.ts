@@ -7,6 +7,7 @@ import serveIndex from "serve-index";
 // Controllers (routers handle)
 import * as home from "./controllers/home"
 import * as media from "./controllers/media"
+import * as gallery from "./controllers/gallery"
 
 // Create Express sever
 const app = express();
@@ -37,6 +38,7 @@ app.use(
 // Primary app router.
 app.get('/', home.index)
 app.get('/media', media.index)
+app.get('/gallery', gallery.index)
 app.get('/sample', (req,res) => {
     res.send("Here is home.")
 })
