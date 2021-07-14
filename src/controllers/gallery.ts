@@ -9,7 +9,7 @@ const get_list_images = (dir_path = "../../media/images") => {
     for (let i in imgs_src) {
         imgs_src[i] = "images/" + imgs_src[i]
     }
-    console.log(imgs_src)
+    // console.log(imgs_src)
     return imgs_src
 }
 
