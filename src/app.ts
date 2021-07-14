@@ -8,6 +8,7 @@ import serveIndex from "serve-index";
 import * as home from "./controllers/home"
 import * as media from "./controllers/media"
 import * as gallery from "./controllers/gallery"
+import * as player from "./controllers/video_play"
 
 // Create Express sever
 const app = express();
@@ -39,6 +40,7 @@ app.use(
 app.get('/', home.index)
 app.get('/media', media.index)
 app.get('/gallery', gallery.index)
+app.get('/video_play', player.index)
 app.get('/sample', (req,res) => {
     res.send("Here is home.")
 })

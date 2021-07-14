@@ -1,0 +1,11 @@
+extends ../layout
+
+block append style 
+  style.
+    .set_display{
+      width: 100%;
+    }
+
+block content
+  img(src="medias/videos/video_demo.mp4").set_display
+  video(src="medias/videos/video_demo.mp4", controls).set_display
