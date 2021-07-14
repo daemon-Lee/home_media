@@ -5,7 +5,9 @@ block append style
     .set_display{
       width: 100%;
     }
+    .set_thumb{
+      width: 200px;
+    }
 
 block content
-  img(src="medias/videos/video_demo.mp4").set_display
-  video(src="medias/videos/video_demo.mp4", controls).set_display
+  video(src=video_path, controls).set_display
