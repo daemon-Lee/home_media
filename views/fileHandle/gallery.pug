@@ -2,18 +2,55 @@ extends ../layout
 
 block append style
     style.
-        .thumb_set{
-            width:25%
+        body {
+            margin: 5px;
+            position: relative;
+            background-color: #eee;
         }
-        .img_col{
-            width:100%
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 4px;
+        }
+        .column {
+            flex: 25%;
+            max-width: 25%;
+            padding: 0 4px;
+        }
+        .column img {
+            margin-top: 8px;
+            vertical-align: middle;
+            width: 100%;
+        }
+        /* Responsive layout - makes a two column-layout instead of four columns */
+        @media screen and (max-width: 800px) {
+            .column {
+                flex: 50%;
+                max-width: 50%;
+            }
+        }
+
+        /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+            .column {
+                flex: 100%;
+                max-width: 100%;
+            }
         }
 
 block content
-    h1 start gallery
-    p= imgs_src.length
-    .row
-        each img_src in imgs_src
-            .col
-                img(src="medias/"+img_src).img_col
-                //- p= img_src
+    h1 Gallery
+    .row 
+        - let i = 0
+        - let img_id = 0
+        - const n = (imgs_src.length / 4) >> 0
+        //- p= n
+        while i < 4
+            - let j = 0
+            .col.column
+                while j < n
+                    - let img_src = "medias/"+imgs_src.shift()
+                    a(href=img_src)
+                        img(src=img_src)
+                    - j++
+            - i++ 
