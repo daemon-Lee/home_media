@@ -11,11 +11,13 @@ header
         .dropdown-divider
         ul.nav.navbar-nav.mr-auto
           li.nav-item(class=(title === 'Media') ? 'active' : undefined)
-            a.nav-link(href='/') Media
+            a.nav-link(href='/media') Media
           li.nav-item(class=(title === 'Medias') ? 'active' : undefined)
             a.nav-link(href='/medias') Medias
           li.nav-item(class=(title === 'Gallery') ? 'active' : undefined)
             a.nav-link(href='/Gallery') Gallery
+          li.nav-item(class=(title === 'Video Center') ? 'active' : undefined)
+            a.nav-link(href='/video_center') Video Center
         ul.nav.navbar-nav
           if !user
             li.nav-item(class=(title === 'Login') ? 'active' : undefined)

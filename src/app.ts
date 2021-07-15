@@ -36,10 +36,17 @@ app.use(
     serveIndex(path.join(__dirname, process.env.MEDIA_PATH || "../media"))
 )
 
+if (process.env.VIDEOS_PATH)
+    app.use(
+        '/videos',
+        express.static(path.join(__dirname, process.env.VIDEOS_PATH))
+    );
+
 // Primary app router.
 app.get('/', home.index)
 app.get('/media', media.index)
 app.get('/gallery', gallery.index)
+app.get('/video_center', Hvideo.player_center)
 app.get('/video_play', Hvideo.player)
 app.get('/sample', (req,res) => {
     res.send("Here is home.")
