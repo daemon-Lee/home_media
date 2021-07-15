@@ -16,11 +16,16 @@ const get_list_video = (dir_path = "media/videos") => {
     return imgs_src
 }
 
+const videoThumb = (video_url: string = 'None') => {
+  console.log(video_url)
+  return video_url
+}
+
 export const player_center = (req: Request, res: Response) => {
   const vlist = get_list_video(process.env.VIDEOS_PATH)
   // res.send(vlist)
   res.render("fileHandle/video_center",{
     title: "Video Center",
-    vlist: vlist
+    vlist: vlist,
   })
 }
