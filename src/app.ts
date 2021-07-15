@@ -36,11 +36,10 @@ app.use(
     serveIndex(path.join(__dirname, process.env.MEDIA_PATH || "../media"))
 )
 
-if (process.env.VIDEOS_PATH)
-    app.use(
-        '/videos',
-        express.static(path.join(__dirname, process.env.VIDEOS_PATH))
-    );
+app.use(
+    '/videos',
+    express.static(path.join(__dirname, process.env.VIDEOS_PATH || "../media/videos"))
+);
 
 // Primary app router.
 app.get('/', home.index)
