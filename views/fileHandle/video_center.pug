@@ -38,11 +38,29 @@ block append style
             }
         }
 
+block scripts
+    script.
+        function createparagraph() {
+            var x = document.createElement("p");
+            var t = document.createTextNode("Paragraph is created.");
+            x.appendChild(t);
+            document.body.appendChild(x);
+        }
+
+        function videoThumb(video_url){
+            var video = document.createElement('video');
+            video.src = vidoe_url;
+            var canvas = document.createElement('canvas');
+        }
+
 block content
     h1 Video Center
-    .row
-      each vlink in vlist
-        .col.column
-          a(href="/video_play?video_path="+"videos/"+vlink)
-            video(src="videos/"+vlink+"#t=20")
-    
+    //- .row
+    //-   each vlink in vlist
+    //-     .col.column
+    //-       a(href="/video_play?video_path="+"videos/"+vlink)
+    //-         video(src="videos/"+vlink+"#t=20")
+    button(onclick="createparagraph()")
+        p CreateParagraph
+    p(onload="createparagraph()") isi
+//- https://stackoverflow.com/questions/40143958/javascript-generate-video-thumbnail-from-video-url
