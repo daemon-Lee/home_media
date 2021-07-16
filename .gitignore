@@ -156,6 +156,7 @@ bower_components
 # Editors
 .idea
 *.iml
+*.test.ts
 
 # OS metadata
 .DS_Store
