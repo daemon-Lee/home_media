@@ -14,6 +14,10 @@ const get_list_video = (dir_path = "media/videos") => {
     dir_path = path.join("../..", dir_path)
     dir_path = path.join(__dirname, dir_path)
     let imgs_src: string[] = fs.readdirSync(dir_path)
+
+    if (!fs.existsSync(dir_path + '/thumb')){
+      fs.mkdirSync(dir_path + '/thumb')
+    }
     imgs_src = imgs_src.filter( (item) => {
       return item !== "thumb"
     })

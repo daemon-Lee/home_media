@@ -4,6 +4,8 @@ import "dotenv/config";
 import path from "path";
 import serveIndex from "serve-index";
 
+import config from "./config";
+
 // Controllers (routers handle)
 import * as home from "./controllers/home"
 import * as media from "./controllers/media"
@@ -14,7 +16,7 @@ import * as Hvideo from "./controllers/video_play"
 const app = express();
 
 // Express configuration
-app.set("port", process.env.PORT || 3000);
+app.set("port", config.POST);
 app.use(compression());
 
 // Use middleware to serve static files
