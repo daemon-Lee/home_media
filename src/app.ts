@@ -4,13 +4,19 @@ import "dotenv/config";
 import path from "path";
 import serveIndex from "serve-index";
 
+// config env
 import config from "./config";
+
+import { setup_sever } from "./utils/utils";
 
 // Controllers (routers handle)
 import * as home from "./controllers/home"
 import * as media from "./controllers/media"
 import * as gallery from "./controllers/gallery"
 import * as Hvideo from "./controllers/video_play"
+
+// setup media files
+setup_sever()
 
 // Create Express sever
 const app = express();
@@ -20,28 +26,18 @@ app.set("port", config.POST);
 app.use(compression());
 
 // Use middleware to serve static files
-app.set("views", path.join(__dirname, "../views"));
+app.set("views", config.VIEWS_PATH);
 app.set("view engine", "pug");
 app.use(
     '/static',
     express.static(
-        path.join(__dirname, "../src/static"),
+        config.STATIC_PATH,
         {maxAge: 31557600001}
     )
 );
-app.use(
-    '/medias',
-    express.static(path.join(__dirname, process.env.MEDIA_PATH || "../media"))
-);
-app.use(
-    '/medias',
-    serveIndex(path.join(__dirname, process.env.MEDIA_PATH || "../media"))
-)
-
-app.use(
-    '/videos',
-    express.static(path.join(__dirname, process.env.VIDEOS_PATH || "../media/videos"))
-);
+app.use('/medias', express.static(config.MEDIA_PATH));
+app.use('/medias', serveIndex(config.MEDIA_PATH));
+app.use('/videos', express.static(config.VIDEOS_PATH));
 
 // Primary app router.
 app.get('/', home.index)
