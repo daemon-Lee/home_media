@@ -10,5 +10,6 @@ block append style
     }
 
 block content
+  h3= video_path
   video(src=video_path, controls, autoplay).set_display
   a(href="/video_center", aria-pressed="true").btn.btn-info Video Center

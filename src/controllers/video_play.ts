@@ -11,8 +11,8 @@ export const player = (req: Request, res: Response) => {
 }
 
 const get_list_video = (dir_path = "media/videos") => {
-    dir_path = path.join("../..", dir_path)
-    // dir_path = path.join(__dirname, dir_path)
+    dir_path = path.join("..", dir_path)
+    dir_path = path.join(__dirname, dir_path)
     let imgs_src: string[] = fs.readdirSync(dir_path)
 
     imgs_src = imgs_src.filter( (item) => {
